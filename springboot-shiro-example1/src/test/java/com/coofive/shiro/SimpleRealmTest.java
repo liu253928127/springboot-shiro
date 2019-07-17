@@ -12,7 +12,7 @@ import org.junit.Test;
 /**
  * @author wenwu.liu.o
  */
-public class FirstRealmTest {
+public class SimpleRealmTest {
 
     @Before
     public void setUp() throws Exception {
@@ -26,7 +26,7 @@ public class FirstRealmTest {
     }
 
     @Test
-    public void testAuthentication() {
+    public void testSimpleRealm() {
         UsernamePasswordToken token = new UsernamePasswordToken("test", "123");
         Subject subject = SecurityUtils.getSubject();
 
