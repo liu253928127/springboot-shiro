@@ -8,10 +8,10 @@ import java.util.Objects;
 /**
  * @author coofive
  */
-public class FirstRealm implements Realm {
+public class SecondRealm implements Realm {
     @Override
     public String getName() {
-        return "FirstRealm";
+        return "SecondRealm";
     }
 
     @Override
@@ -33,6 +33,6 @@ public class FirstRealm implements Realm {
             throw new IncorrectCredentialsException();
         }
 
-        return new SimpleAuthenticationInfo(username, password, getName());
+        return new SimpleAuthenticationInfo(username + "@163.com", password, getName());
     }
 }
