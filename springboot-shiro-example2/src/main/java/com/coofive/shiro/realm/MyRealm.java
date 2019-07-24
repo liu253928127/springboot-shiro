@@ -1,5 +1,6 @@
 package com.coofive.shiro.realm;
 
+import com.coofive.shiro.perms.MyPermission;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -21,7 +22,7 @@ public class MyRealm extends AuthorizingRealm {
         info.addRole("role1");
         info.addRole("role2");
         info.addObjectPermission(new WildcardPermission("user:1:*"));
-        info.addStringPermission("+user2+10");
+        info.addObjectPermission(new MyPermission("+user:1:s"));
         info.addStringPermission("user2:*");
         return info;
     }
